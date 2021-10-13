@@ -41,6 +41,6 @@ function childOf(Object){
     return Object.parents;
 }
 
-console.log(typeof childOf(Lizzy2))
+console.log(childOf(Lizzy2))
 
 module.exports = { Lizzy2, childOf, GeorgeVI }
