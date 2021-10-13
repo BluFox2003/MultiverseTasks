@@ -12,7 +12,6 @@ const PrincessMargaret = {
 
 PrincessMargaret.parents = [GeorgeVI.name, "Elizabeth"]
 
-
 const Philip = {
     name: "Philip"
 }
@@ -20,6 +19,8 @@ const Philip = {
 const POW = {
     name: "Charles"
 }
+
+POW.parents = [Philip.name, Lizzy2.name]
 
 const Diana = {
     name: "Diana"
@@ -29,12 +30,15 @@ const Camila = {
     name: "Camila"
 }
 
-POW.parents = [Philip, Lizzy2]
+const William = {
+    name: "William"
+}
 
+William.parents = [POW.name, Diana.name]
+
+//Functions
 function childOf(Object){
     return Object.parents;
 }
 
 console.log(childOf(POW))
-
-//GitHub Test
