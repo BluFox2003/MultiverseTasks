@@ -1,7 +1,6 @@
 {
   "name": "multiversetasks",
   "version": "1.0.0",
-  "description": "",
   "main": "RoyalFamily.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,7 @@
   "homepage": "https://github.com/BluFox2003/MultiverseTasks#readme",
   "dependencies": {
     "jest": "^27.2.5"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
