@@ -2,7 +2,8 @@ const GeorgeVI = {
     name: "George VI"
 }
 const Lizzy2 = {
-    name: "Elizabeth II"
+    name: "Elizabeth II",
+    age: 1000000
 }
 Lizzy2.parents = [GeorgeVI.name, "Elizabeth"]
 
@@ -41,6 +42,16 @@ function childOf(Object){
     return Object.parents;
 }
 
-console.log(childOf(Lizzy2))
+function royalInfo(Object){
+    const age = Object.age;
+    const name = Object.name;
+    const parent = childOf(Object);
+    const a = age.toString();
+    let info = name + " is " + a + " years old and is a child of " + parent[0] + " and " + parent[1];
+    return info;
+    
+}
+
+console.log(royalInfo(Lizzy2))
 
 module.exports = { Lizzy2, childOf, GeorgeVI }
