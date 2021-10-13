@@ -1,0 +1,19 @@
+{
+  "name": "multiversetasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "RoyalFamily.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BluFox2003/MultiverseTasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BluFox2003/MultiverseTasks/issues"
+  },
+  "homepage": "https://github.com/BluFox2003/MultiverseTasks#readme"
+}
