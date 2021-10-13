@@ -42,3 +42,5 @@ function childOf(Object){
 }
 
 console.log(childOf(POW))
+
+module.exports = { Lizzy2 }

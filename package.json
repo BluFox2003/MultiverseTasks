@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BluFox2003/MultiverseTasks/issues"
   },
-  "homepage": "https://github.com/BluFox2003/MultiverseTasks#readme"
+  "homepage": "https://github.com/BluFox2003/MultiverseTasks#readme",
+  "dependencies": {
+    "jest": "^27.2.5"
+  }
 }
