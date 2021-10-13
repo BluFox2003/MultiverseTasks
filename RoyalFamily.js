@@ -20,3 +20,5 @@ function childOf(Object){
 }
 
 console.log(childOf(Lizzy2))
+
+//GitHub Test
