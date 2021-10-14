@@ -1,4 +1,5 @@
-const {Passenger, Bag} = require("./AirportSystem")
+const {Passenger} = require("./Passenger")
+const {Bag} = require("./Bag")
 
 
 
