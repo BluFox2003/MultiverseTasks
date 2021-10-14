@@ -52,6 +52,6 @@ function royalInfo(Object){
     
 }
 
-console.log(royalInfo(Lizzy2))
+console.log(royalInfo(Lizzy2));
 
 module.exports = { Lizzy2, childOf, GeorgeVI }
