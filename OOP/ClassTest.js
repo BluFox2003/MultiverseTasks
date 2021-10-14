@@ -5,7 +5,7 @@ class Cars {
     }
 }
 
-carOne = new Cars ("Ford", "Blue");
-carTwo = new Cars ("Ferrari", "Red");
+const carOne = new Cars ("Ford", "Blue");
+const carTwo = new Cars ("Ferrari", "Red");
 
-console.log(carOne, carTwo);
+console.log(carOne);
