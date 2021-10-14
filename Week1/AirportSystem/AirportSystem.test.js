@@ -1,8 +1,13 @@
 const {Passenger, Bag} = require("./AirportSystem")
 
+
+
 describe("AirportTest", () => {
+    beforeAll(() => {
+        P1 = new Passenger("Joe", 69420, "15C")
+    })
     test("Should return if Passenger info is in an array", () => {
-        expect(typeof new Passenger("Bob", 12, "16A")).toBe("object")
+        expect(typeof P1).toBe("object")
     })
     test("Should return a number from bag weight", () => {
         expect(typeof new Bag(12).weight).toBe("number")
