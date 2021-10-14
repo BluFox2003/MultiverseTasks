@@ -43,11 +43,30 @@ describe("BagTests", () => {
 describe("AircraftTests", () => {
     beforeAll(() => {
         Plane1 = new Aircraft("Boeing F/A-18", "ABC12", 2, "US Navy")
+        P1Depart = new Airport("London Heathrow", "England", "LHR")
+        P1Arrival = new Airport("Leeds Bradford Airport", "England", "EGNM")
+        Plane1.addDeparture(P1Depart)
+        Plane1.addArrival(P1Arrival)
     })
     test("Should return aircraft type as a string", () =>{
         expect(typeof Plane1.model).toBe("string")
     })
     test("Should return aircraft capacity as an int", () =>{
         expect(typeof Plane1.capacity).toBe("number")
+    })
+    test("Should return the departure airport as London Heathrow", () =>{
+        expect(Plane1.departure[0].name).toBe("London Heathrow")
+    })
+})
+
+describe("AirportTests", () => {
+    beforeAll(() => {
+        Airport1 = new Airport("Chicago O'Hare Airport", "USA", "ORD")
+    })
+    test("Should return the code of the airport as ORD", () => {
+        expect(Airport1.code).toBe("ORD")
+    })
+    test("Should return the type of the airport name as a string", () => {
+        expect(typeof Airport1.name).toBe("string")
     })
 })
