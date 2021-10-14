@@ -7,7 +7,13 @@ const {Crew} = require("./CrewMember")
 
 describe("PassengerTests", () => {
     beforeAll(() => {
-        P1 = new Passenger("Joe", 69420, "15C")
+        Plane1 = new Aircraft("Boeing F/A-18", "ABC12", 2, "US Navy")
+        P1 = new Passenger("Joe", 6874, "15C")
+        P1.addFlight(Plane1)
+        P1Depart = new Airport("London Heathrow", "England", "LHR")
+        P1Arrival = new Airport("Leeds Bradford Airport", "England", "EGNM")
+        Plane1.addDeparture(P1Depart)
+        Plane1.addArrival(P1Arrival)
     })
     test("Should return if Passenger info is in an array", () => {
         expect(typeof P1).toBe("object")
@@ -27,6 +33,12 @@ describe("PassengerTests", () => {
     test("Should return seat number as a string", () => {
         expect(typeof P1.seatNumber).toBe("string")
     })
+    test("Should return the flight/aircraft model to be a string", () => {
+        expect(typeof P1.flight[0].model).toBe("string")
+    }) 
+    test("Should return the flights destination code as EGNM", () => {
+        expect(P1.flight[0].arrival[0].code).toBe("EGNM")
+    })
 })
 
 describe("BagTests", () => {
@@ -43,11 +55,6 @@ describe("BagTests", () => {
 
 describe("AircraftTests", () => {
     beforeAll(() => {
-        Plane1 = new Aircraft("Boeing F/A-18", "ABC12", 2, "US Navy")
-        P1Depart = new Airport("London Heathrow", "England", "LHR")
-        P1Arrival = new Airport("Leeds Bradford Airport", "England", "EGNM")
-        Plane1.addDeparture(P1Depart)
-        Plane1.addArrival(P1Arrival)
     })
     test("Should return aircraft type as a string", () =>{
         expect(typeof Plane1.model).toBe("string")
@@ -85,5 +92,8 @@ describe("CrewTests", () => {
     })
     test("Should return the plane model as Boeing F/A-18", () => {
         expect(Crew1.aircraft[0].model).toBe("Boeing F/A-18")
+    })
+    test("Should return the aircraft capacity as an int", () => {
+        expect(typeof Crew1.aircraft[0].capacity).toBe("number")
     })
 })

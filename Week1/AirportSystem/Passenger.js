@@ -6,10 +6,14 @@ class Passenger {
         this.flightNumber = flightNumber
         this.seatNumber = seatNumber
         this.bags = []
+        this.flight = []
     }
 
     addBag(bag) {
         this.bags.push(bag)
+    }
+    addFlight(Plane) {
+        this.flight.push(Plane)
     }
 }
 
