@@ -6,5 +6,6 @@ class Cars {
 }
 
 carOne = new Cars ("Ford", "Blue");
+carTwo = new Cars ("Ferrari", "Red");
 
-console.log(carOne)
+console.log(carOne, carTwo);
