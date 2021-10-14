@@ -1,6 +1,12 @@
 class Bag {
     constructor(weight) {
-        this.weight = weight;
+        
+        if (weight == undefined){
+            throw new Error("Bag must have a weight")
+        }
+        else {
+            this.weight = weight;
+        }
     };
 }
 

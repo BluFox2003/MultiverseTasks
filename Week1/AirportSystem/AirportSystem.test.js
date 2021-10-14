@@ -15,4 +15,7 @@ describe("AirportTest", () => {
     test("Should return the exact same number weight as passed", () =>{
         expect(new Bag(15).weight).toEqual(15)
     })
+    test("Should Throw an error", () => {
+        expect(() => new Bag()).toThrowError("Bag must have a weight")
+    })
 })
