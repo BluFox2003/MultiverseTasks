@@ -9,3 +9,5 @@ class Crew {
 
 const crew1 = new Crew("Maverick Flyman", "Pilot", "ABC123")
 console.log(crew1)
+
+module.exports = {Crew}
