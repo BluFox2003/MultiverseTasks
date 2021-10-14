@@ -8,3 +8,6 @@ class Aircraft {
 }
 
 P1 = new Aircraft("Boeing 737", "73G", 188, "British Airways")
+console.log(P1.model)
+
+module.exports = {Aircraft}

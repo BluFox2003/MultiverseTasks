@@ -1,5 +1,7 @@
 const {Passenger} = require("./Passenger")
 const {Bag} = require("./Bag")
+const {Aircraft} = require("./Aircraft")
+const {Airport} = require("./Airport")
 
 
 describe("PassengerTests", () => {
