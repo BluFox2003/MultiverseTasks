@@ -39,3 +39,15 @@ describe("BagTests", () => {
         expect(() => new Bag()).toThrowError("Bag must have a weight")
     })
 })
+
+describe("AircraftTests", () => {
+    beforeAll(() => {
+        Plane1 = new Aircraft("Boeing F/A-18", "ABC12", 2, "US Navy")
+    })
+    test("Should return aircraft type as a string", () =>{
+        expect(typeof Plane1.model).toBe("string")
+    })
+    test("Should return aircraft capacity as an int", () =>{
+        expect(typeof Plane1.capacity).toBe("number")
+    })
+})
