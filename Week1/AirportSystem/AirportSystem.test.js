@@ -71,3 +71,15 @@ describe("AirportTests", () => {
         expect(typeof Airport1.name).toBe("string")
     })
 })
+
+describe("CrewTests", () => {
+    beforeAll(() => {
+        Crew1 = new Crew("Joe Doe", "Co-Pilot", "ABC123")
+    })
+    test("Should return the name as Joe Doe", () => {
+        expect(Crew1.name).toBe("Joe Doe")
+    })
+    test("Should return role as a string", () => {
+        expect(typeof Crew1.role).toBe("string")
+    })
+})
