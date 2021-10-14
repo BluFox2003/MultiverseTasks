@@ -75,11 +75,15 @@ describe("AirportTests", () => {
 describe("CrewTests", () => {
     beforeAll(() => {
         Crew1 = new Crew("Joe Doe", "Co-Pilot", "ABC123")
+        Crew1.addAircraft(Plane1)
     })
     test("Should return the name as Joe Doe", () => {
         expect(Crew1.name).toBe("Joe Doe")
     })
     test("Should return role as a string", () => {
         expect(typeof Crew1.role).toBe("string")
+    })
+    test("Should return the plane model as Boeing F/A-18", () => {
+        expect(Crew1.aircraft[0].model).toBe("Boeing F/A-18")
     })
 })
