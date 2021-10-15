@@ -65,6 +65,12 @@ describe("AircraftTests", () => {
     test("Should return the departure airport as London Heathrow", () =>{
         expect(Plane1.departure[0].name).toBe("London Heathrow")
     })
+    test("Should return a string saying where the plane is flying", () => {
+        expect(typeof Aircraft.flyPlane(Aircraft.planes[1])).toBe("string")
+    })
+    test("Should return US Navy Boeing F/A-18 is flying from London Heathrow to Leeds Bradford Airport", () => {
+        expect(Aircraft.flyPlane(Aircraft.planes[1])).toBe("US Navy Boeing F/A-18 is flying from London Heathrow to Leeds Bradford Airport")
+    })
 })
 
 describe("AirportTests", () => {

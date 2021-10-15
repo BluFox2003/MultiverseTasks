@@ -18,8 +18,8 @@ class Aircraft {
     addArrival(Arrive) {
         this.arrival.push(Arrive)
     }
-    static flyPlane(Depart, Arrive) {
-        return
+    static flyPlane(plane) {
+        return (plane.company + " " + plane.model + " is flying from " + plane.departure[0].name + " to " + plane.arrival[0].name)
     }
 }
 
@@ -34,7 +34,9 @@ P1.addArrival(P1Arrival)
 P2.addDeparture(P2Depart)
 P2.addArrival(P2Arrival)
 
-console.log(Aircraft.planes[0].departure)
+//Aircraft.flyPlane(Aircraft.planes[1])
+
+console.log(Aircraft.flyPlane(Aircraft.planes[1]))
 
 
 module.exports = {Aircraft}
