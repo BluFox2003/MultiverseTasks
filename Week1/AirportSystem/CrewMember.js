@@ -1,20 +1,18 @@
 const { Aircraft } = require("./Aircraft")
+const {Person} = require("./Person")
 
-class Crew {
-    constructor(name, role, staffID){
-        this.name = name
+class Crew extends Person{
+    constructor(name, role, staffID, flightNumber){
+        super(name, flightNumber)
         this.role = role
         this.staffID = staffID
-        this.aircraft = []
     }
-    addAircraft(Plane) {
-        this.aircraft.push(Plane)
-    }
+
 }
 
-const crew1 = new Crew("Maverick Flyman", "Pilot", "ABC123")
+const crew1 = new Crew("Maverick Flyman", "Pilot", "ABC123", 123)
 const C1Plane = new Aircraft("F-14 Tomcat", "AB14", 2, "Top Gun")
-crew1.addAircraft(C1Plane)
+crew1.addFlight(C1Plane)
 console.log(crew1)
 
 module.exports = {Crew}

@@ -8,7 +8,7 @@ const {Crew} = require("./CrewMember")
 describe("PassengerTests", () => {
     beforeAll(() => {
         Plane1 = new Aircraft("Boeing F/A-18", "ABC12", 2, "US Navy")
-        P1 = new Passenger("Joe", 6874, "15C")
+        P1 = new Passenger("Joe", "15C" ,6874)
         P1.addFlight(Plane1)
         P1Depart = new Airport("London Heathrow", "England", "LHR")
         P1Arrival = new Airport("Leeds Bradford Airport", "England", "EGNM")
@@ -88,7 +88,7 @@ describe("AirportTests", () => {
 describe("CrewTests", () => {
     beforeAll(() => {
         Crew1 = new Crew("Joe Doe", "Co-Pilot", "ABC123")
-        Crew1.addAircraft(Plane1)
+        Crew1.addFlight(Plane1)
     })
     test("Should return the name as Joe Doe", () => {
         expect(Crew1.name).toBe("Joe Doe")
@@ -97,9 +97,9 @@ describe("CrewTests", () => {
         expect(typeof Crew1.role).toBe("string")
     })
     test("Should return the plane model as Boeing F/A-18", () => {
-        expect(Crew1.aircraft[0].model).toBe("Boeing F/A-18")
+        expect(Crew1.flight[0].model).toBe("Boeing F/A-18")
     })
     test("Should return the aircraft capacity as an int", () => {
-        expect(typeof Crew1.aircraft[0].capacity).toBe("number")
+        expect(typeof Crew1.flight[0].capacity).toBe("number")
     })
 })
