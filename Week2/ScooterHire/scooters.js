@@ -5,3 +5,5 @@ class Scooter {
     this.constructor.scooters.push(this);
   }
 }
+
+module.exports = { Scooter };

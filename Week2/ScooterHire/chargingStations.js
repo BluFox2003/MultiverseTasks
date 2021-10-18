@@ -6,3 +6,5 @@ class chargingStation {
     this.scooterAmount = this.scooters.length;
   }
 }
+
+module.exports = { chargingStation };
