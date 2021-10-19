@@ -5,5 +5,7 @@ class Scooter {
     this.constructor.scooters.push(this);
   }
 }
+const S1 = new Scooter("ABC123");
 
+console.log(Scooter.scooters);
 module.exports = { Scooter };
