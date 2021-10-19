@@ -4,6 +4,7 @@ class User {
     this.name = name;
     this.age = age;
     this.password = password;
+    this.constructor.users.push(this);
   }
   static isUser18(User) {
     if (User.age >= 18) {

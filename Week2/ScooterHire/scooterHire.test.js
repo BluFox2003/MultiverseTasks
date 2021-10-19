@@ -24,3 +24,15 @@ describe("UserTests", () => {
     expect(typeof User1.password).toBe("string");
   });
 });
+
+describe("ChargingStationTests", () => {
+  test("Charging station scooter amount should return a number", () => {
+    expect(typeof CS1.scooterAmount).toBe("number");
+  });
+  test("Charging station scooters should return an array", () => {
+    expect(typeof CS1.scooters).toBe("object");
+  });
+  test("Charging station ID should be CS1", () => {
+    expect(CS1.CSID).toBe("CS1");
+  });
+});

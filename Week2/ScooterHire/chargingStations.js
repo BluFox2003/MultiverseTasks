@@ -6,6 +6,7 @@ class chargingStation {
     this.scooters = [];
     this.scooters.push(Scooter.scooters);
     this.scooterAmount = this.scooters[0].length;
+    this.constructor.chargingStations.push(this);
   }
 }
 
