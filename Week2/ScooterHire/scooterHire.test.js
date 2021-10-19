@@ -1,7 +1,6 @@
 const { Scooter } = require("./scooters.js");
 const { User } = require("./users");
 const { chargingStation } = require("./chargingStations");
-const { TestWatcher } = require("@jest/core");
 
 describe("UserTests", () => {
   beforeAll(() => {
@@ -34,5 +33,11 @@ describe("ChargingStationTests", () => {
   });
   test("Charging station ID should be CS1", () => {
     expect(CS1.CSID).toBe("CS1");
+  });
+});
+
+describe("ScooterTests", () => {
+  test("ScooterID should be a string", () => {
+    expect(typeof S1.scooterID).toBe("string");
   });
 });

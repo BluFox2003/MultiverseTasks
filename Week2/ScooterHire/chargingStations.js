@@ -12,6 +12,6 @@ class chargingStation {
 
 CS1 = new chargingStation("CS1");
 
-console.log(CS1.scooterAmount);
+//console.log(CS1.scooterAmount);
 
 module.exports = { chargingStation };
