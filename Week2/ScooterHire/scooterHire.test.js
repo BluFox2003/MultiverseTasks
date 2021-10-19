@@ -17,4 +17,7 @@ describe("UserTests", () => {
   test("If the user is less than 18 then isUser18 should return false", () => {
     expect(User.isUser18(User2)).toBe(false);
   });
+  test("Should return the users name as Joe", () => {
+    expect(User2.name).toBe("Joe");
+  });
 });
