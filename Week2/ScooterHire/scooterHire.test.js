@@ -20,4 +20,7 @@ describe("UserTests", () => {
   test("Should return the users name as Joe", () => {
     expect(User2.name).toBe("Joe");
   });
+  test("Should return the users password as a string", () => {
+    expect(typeof User1.password).toBe("string");
+  });
 });
