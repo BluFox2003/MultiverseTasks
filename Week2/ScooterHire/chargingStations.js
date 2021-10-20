@@ -28,9 +28,7 @@ class chargingStation {
 
 const CS1 = new chargingStation("CS1");
 
-console.log(CS1.rentScooter());
 // console.log(CS1.scooters);
-CS1.returnScooter();
 
 // console.log(CS1.scooters);
 // console.log(CS1.rentedScooter);

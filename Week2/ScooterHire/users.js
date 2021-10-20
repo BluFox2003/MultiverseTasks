@@ -17,12 +17,12 @@ class User {
   }
 }
 
-U1 = new User("Bob", 17, "Qwerty");
+// U1 = new User("Bob", 17, "Qwerty");
 
-if (User.isUser18(U1) == true) {
-  console.log("Success");
-} else {
-  console.log("Fail");
-}
+// if (User.isUser18(U1) == true) {
+//   console.log("Success");
+// } else {
+//   console.log("Fail");
+// }
 
 module.exports = { User };
