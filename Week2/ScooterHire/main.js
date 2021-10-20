@@ -13,7 +13,7 @@ class Main {
   }
 }
 Customer = new User(userName, Number(userAge), userPassword);
-const A = User.isUser18(Customer);
+let A = User.isUser18(Customer);
 const answer1 = prompt(
   `\n Hello ${userName}, Would you like to rent a scooter? (Yes or No) `
 );
@@ -24,6 +24,8 @@ if (answer1 == "Yes" || "yes" || "Y" || "y") {
       "\n Please return the scooter after 4 hours or before it runs out of charge \n "
     );
     Main.waitTime();
+    console.log("Time to return the scooter");
+    CS1.returnScooter();
   } else {
     console.log("Goodbye");
   }
@@ -31,7 +33,3 @@ if (answer1 == "Yes" || "yes" || "Y" || "y") {
   console.log("Program will end");
   process.abort();
 }
-
-//console.log("Time to return the scooter");
-
-CS1.returnScooter();
