@@ -25,6 +25,10 @@ describe("UserTests", () => {
 });
 
 describe("ChargingStationTests", () => {
+  beforeAll(() => {
+    CS1 = new chargingStation("CS1");
+    CS1.rentScooter();
+  });
   test("Charging station scooter amount should return a number", () => {
     expect(typeof CS1.scooterAmount).toBe("number");
   });
@@ -34,9 +38,18 @@ describe("ChargingStationTests", () => {
   test("Charging station ID should be CS1", () => {
     expect(CS1.CSID).toBe("CS1");
   });
+  test("rented scooter should return an array", () => {
+    expect(typeof CS1.rentedScooter).toBe("object");
+  });
+  test("Scooter amount should be 4 after renting one", () => {
+    expect(CS1.scooterAmount).toBe(4);
+  });
 });
 
 describe("ScooterTests", () => {
+  beforeAll(() => {
+    S1 = new Scooter("S1ID");
+  });
   test("ScooterID should be a string", () => {
     expect(typeof S1.scooterID).toBe("string");
   });
