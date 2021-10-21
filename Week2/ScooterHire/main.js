@@ -9,7 +9,7 @@ const userPassword = prompt("Enter a password ");
 
 class Main {
   static async waitTime() {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 20000));
   }
 }
 Customer = new User(userName, Number(userAge), userPassword);
