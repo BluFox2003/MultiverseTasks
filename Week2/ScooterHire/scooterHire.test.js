@@ -53,4 +53,7 @@ describe("ScooterTests", () => {
   test("ScooterID should be a string", () => {
     expect(typeof S1.scooterID).toBe("string");
   });
+  test("ScooterID should be S1ID", () => {
+    expect(S1.scooterID).toBe("S1ID");
+  });
 });
