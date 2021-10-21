@@ -22,6 +22,9 @@ describe("UserTests", () => {
   test("Should return the users password as a string", () => {
     expect(typeof User1.password).toBe("string");
   });
+  test("Should return the users password as Password123", () => {
+    expect(User1.password).toBe("Password123");
+  });
 });
 
 describe("ChargingStationTests", () => {
