@@ -10,3 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.listen(port, () => {
   console.log(`server listening on ${port}`);
 });
+
+app.post("/users", (req, res) => {
+  res.send(`Hello ${req.body.username}`);
+});
