@@ -22,7 +22,7 @@ app
       const restaurant = await Restaurant.create(req.body);
 
       // 201 = created a resource
-      res.status(201).send(restaurant);
+      res.status(201).send(res.redirect("/index.html"));
     } catch (e) {
       res.status(400).send(e.message);
     }
@@ -44,7 +44,7 @@ app.delete("/api/restaurants/:id", async (req, res) => {
     const restaurants = await Restaurant.destroy({
       where: { id: req.params.id },
     });
-    res.status(204).send(restaurants);
+    res.status(204).send(console.log("Deleted"));
   } catch (e) {
     res.status(400).send(e.message);
   }
