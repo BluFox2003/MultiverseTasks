@@ -6,11 +6,14 @@ const {
   MenuItem,
 } = require("./sequelize-connect");
 const express = require("express");
+
 const app = express();
 const port = 3001;
+app.use(express.static("public"));
 
 // support req.body parsing
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app
   .post("/api/restaurants", async (req, res) => {
@@ -36,6 +39,16 @@ app
       res.status(400).send(e.message);
     }
   });
+app.delete("/api/restaurants/:id", async (req, res) => {
+  try {
+    const restaurants = await Restaurant.destroy({
+      where: { id: req.params.id },
+    });
+    res.status(204).send(restaurants);
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
+});
 
 // 1. create an endpoint that will get a restaurant by ID (HTTP Method = get)
 
