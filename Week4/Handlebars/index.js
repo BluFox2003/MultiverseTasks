@@ -19,11 +19,16 @@ const handlebars = expressHandlebars({
   handlebars: allowInsecurePrototypeAccess(Handlebars),
 });
 app.engine("handlebars", handlebars);
-app.set("view engine", "hbs");
+app.set("view engine", "handlebars");
 
 // support req.body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+  res.render("main", { layout: "index" });
+});
 
 app
   .post("/api/restaurants", async (req, res) => {

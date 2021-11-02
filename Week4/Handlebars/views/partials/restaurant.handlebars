@@ -1,0 +1,15 @@
+<head>
+  <link rel="stylesheet" href="/stylesheet.css" />
+  <title>View Restaurants</title>
+</head>
+<body>
+<section>
+    {{#each restaurants}}
+        <article>
+            <h2>{{this.name}}</h2>
+            <img src="{{this.imagelink}}"/>
+        </article>
+    {{/each}}
+</section>
+    </body>
+</html>
