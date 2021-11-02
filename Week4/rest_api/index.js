@@ -6,10 +6,20 @@ const {
   MenuItem,
 } = require("./sequelize-connect");
 const express = require("express");
+const Handlebars = require("handlebars");
+const expressHandlebars = require("express-handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
 
 const app = express();
 const port = 3001;
 app.use(express.static("public"));
+const handlebars = expressHandlebars({
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+});
+app.engine("handlebars", handlebars);
+app.set("view engine", "handlebars");
 
 // support req.body parsing
 app.use(express.json());
