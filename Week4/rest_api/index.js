@@ -6,20 +6,10 @@ const {
   MenuItem,
 } = require("./sequelize-connect");
 const express = require("express");
-const Handlebars = require("handlebars");
-const expressHandlebars = require("express-handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
 
 const app = express();
 const port = 3001;
 app.use(express.static("public"));
-const handlebars = expressHandlebars({
-  handlebars: allowInsecurePrototypeAccess(Handlebars),
-});
-app.engine("handlebars", handlebars);
-app.set("view engine", "hbs");
 
 // support req.body parsing
 app.use(express.json());
@@ -42,7 +32,6 @@ app
     try {
       // create a row in the database using sequelize create method
       const restaurants = await Restaurant.findAll({});
-      res.render("restaurants", { restaurants });
 
       // 200 = success
       res.status(200).send(restaurants);
@@ -50,10 +39,6 @@ app
       res.status(400).send(e.message);
     }
   });
-app.get("/api/restaurants/:id", async (req, res) => {
-  const restaurant = await Restaurant.findByPk(req.params.id);
-  res.render("restaurant", { restaurant });
-});
 
 app.delete("/api/restaurants/:id", async (req, res) => {
   try {
