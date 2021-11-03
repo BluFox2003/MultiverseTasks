@@ -3,6 +3,8 @@ const app = express();
 const port = 8002;
 const handlebars = require("./handlebars");
 const restaurantRoutes = require("./routes/web/restaurants");
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 app.engine("handlebars", handlebars);
 app.set("view engine", "handlebars");

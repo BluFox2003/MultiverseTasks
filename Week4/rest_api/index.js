@@ -6,10 +6,12 @@ const {
   MenuItem,
 } = require("./sequelize-connect");
 const express = require("express");
+const methodOverride = require("method-override");
 
 const app = express();
 const port = 3001;
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 
 // support req.body parsing
 app.use(express.json());
@@ -40,6 +42,16 @@ app
     }
   });
 
+app.get("/api/restaurants/:id", async (req, res) => {
+  try {
+    const restaurants = await Restaurant.findAll({
+      where: { id: req.params.id },
+    });
+    res.status(200).send(restaurants);
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
+});
 app.delete("/api/restaurants/:id", async (req, res) => {
   try {
     const restaurants = await Restaurant.destroy({
