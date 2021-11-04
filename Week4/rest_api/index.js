@@ -54,7 +54,7 @@ app.get("/api/restaurants/:id", async (req, res) => {
 });
 app.delete("/api/restaurants/:id", async (req, res) => {
   try {
-    const restaurants = await Restaurant.destroy({
+    await Restaurant.destroy({
       where: { id: req.params.id },
     });
     res.status(204).send(console.log("Deleted"));

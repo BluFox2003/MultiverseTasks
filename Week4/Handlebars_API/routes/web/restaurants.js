@@ -28,11 +28,16 @@ Router.get("/:id/delete", async (req, res, next) => {
 });
 Router.delete("/:id/delete", async (req, res, next) => {
   try {
-    await fetch(url + `/${req.params.id}`, {
+    const response = await fetch(url + `/${req.params.id}`, {
       method: "DELETE",
     });
-    res.redirect("http://localhost:8002/restaurants");
+    console.log("test3");
+    if (response.ok) {
+      res.redirect("http://localhost:8002/restaurants");
+      console.log("test");
+    }
   } catch (error) {
+    console.log("test2");
     return next(error);
   }
 });

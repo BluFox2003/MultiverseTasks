@@ -5,16 +5,12 @@
   <dd>{{restaurant.0.name}}</dd>
   <dt>Image</dt>
   <dd>
-    <img
-      class="round-image"
-      src="{{restaurant.0.imagelink}}"
-      alt="{{restaurant.0.name}}"
-    />
+    <img src="{{restaurant.0.imagelink}}" alt="{{restaurant.0.name}}" />
   </dd>
 </dl>
 <form
   method="post"
-  action="http://localhost:3001/api/restaurants/{{restaurant.0.id}}/?_method=DELETE"
+  action="http://localhost:3001/api/restaurants/{{restaurant.0.id}}?_method=DELETE"
 >
   <input type="submit" value="Delete" />
 </form>
