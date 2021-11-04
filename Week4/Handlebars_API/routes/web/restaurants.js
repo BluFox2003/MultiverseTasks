@@ -16,12 +16,22 @@ Router
       return next(error);
     }
   });
-Router.delete("/", async (req, res, next) => {
+Router.get("/:id/delete", async (req, res, next) => {
   try {
-    const response = await fetch(url, {
+    const response = await fetch(url + `/${req.params.id}`);
+    const restaurant = await response.json();
+
+    res.render("deleteRestaurant", { restaurant });
+  } catch (error) {
+    return next(error);
+  }
+});
+Router.delete("/:id/delete", async (req, res, next) => {
+  try {
+    await fetch(url + `/${req.params.id}`, {
       method: "DELETE",
     });
-    const restaurants = await response.json();
+    res.redirect("http://localhost:8002/restaurants");
   } catch (error) {
     return next(error);
   }

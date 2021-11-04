@@ -1,0 +1,20 @@
+<h2>Delete</h2>
+<h4>Are you sure you want to delete {{restaurant.0.name}}?</h4>
+<dl>
+  <dt>name</dt>
+  <dd>{{restaurant.0.name}}</dd>
+  <dt>Image</dt>
+  <dd>
+    <img
+      class="round-image"
+      src="{{restaurant.0.imagelink}}"
+      alt="{{restaurant.0.name}}"
+    />
+  </dd>
+</dl>
+<form
+  method="post"
+  action="http://localhost:3001/api/restaurants/{{restaurant.0.id}}/?_method=DELETE"
+>
+  <input type="submit" value="Delete" />
+</form>
