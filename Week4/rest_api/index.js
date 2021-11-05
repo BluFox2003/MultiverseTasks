@@ -62,6 +62,14 @@ app.delete("/api/restaurants/:id", async (req, res) => {
     res.status(400).send(e.message);
   }
 });
+app.put("/api/restaurants/:id", async (req, res) => {
+  try {
+    await Restaurant.update(req.body, { where: { id: req.params.id } });
+    res.status(200).send(console.log("Updated"));
+  } catch (e) {
+    res.status(400).send();
+  }
+});
 
 // 1. create an endpoint that will get a restaurant by ID (HTTP Method = get)
 

@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 100,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:MultiverseTasks}/Week4/rest_api/database/db.sqlite",
+      "name": "API_Database"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

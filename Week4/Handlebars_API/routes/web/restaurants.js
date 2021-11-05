@@ -58,5 +58,31 @@ Router.post("/create", async (req, res, next) => {
     return next(error);
   }
 });
+Router.get("/:id/edit", async (req, res, next) => {
+  try {
+    const response = await fetch(url + `/${req.params.id}`);
+    const restaurant = await response.json();
+
+    res.render("editRestaurant", { restaurant });
+  } catch (error) {
+    return next(error);
+  }
+});
+// EDIT ONE RESTAURANT
+Router.put("/:id/edit", async (req, res, next) => {
+  try {
+    await fetch(url + `/${req.params.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(req.body), // data comes from a form
+    });
+    console.log("edited");
+    res.redirect("/restaurants");
+  } catch (error) {
+    return next(error);
+  }
+});
 
 module.exports = Router;
