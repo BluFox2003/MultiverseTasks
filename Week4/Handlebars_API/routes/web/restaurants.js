@@ -32,10 +32,10 @@ Router.delete("/:id/delete", async (req, res, next) => {
       method: "DELETE",
     });
     console.log("test3");
-    if (response.ok) {
-      res.redirect("http://localhost:8002/restaurants");
-      console.log("test");
-    }
+    // if (response.ok) {
+    // res.redirect(console.log("test"));
+    res.redirect("/restaurants");
+    // }
   } catch (error) {
     console.log("test2");
     return next(error);
